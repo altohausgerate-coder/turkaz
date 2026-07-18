@@ -1,0 +1,9 @@
+{
+  // Turkaz Enerji — statik sayt (Cloudflare Worker, assets-only)
+  "name": "turkazenerji",
+  "compatibility_date": "2026-07-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  }
+}
