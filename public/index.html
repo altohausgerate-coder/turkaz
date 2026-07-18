@@ -3,6 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script>
+      // Remove caches/service workers left by older versions of the site.
+      // Otherwise the old homepage can flash briefly before the current app mounts.
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          registrations.forEach((registration) => registration.unregister());
+        });
+      }
+      if ("caches" in window) {
+        caches.keys().then((keys) => {
+          keys.forEach((key) => caches.delete(key));
+        });
+      }
+    </script>
     <title>Turkaz Enerji MMC — Akkumulyator Distributoru</title>
     <meta name="description" content="Turkiyenin aparici akkumulyator brendlerinin resmi distributoru. Yigit Aku, Perge Aku, Yuras ve daha cox.">
     <link rel="canonical" href="https://turkaz.online/" />
